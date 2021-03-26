@@ -1,0 +1,5 @@
+C:\Users\Saba Rafique\Documents\Visual Studio 2013\Projects\TMS\TMS\TMS.Common\bin\Debug\TMS.Common.dll
+C:\Users\Saba Rafique\Documents\Visual Studio 2013\Projects\TMS\TMS\TMS.Common\bin\Debug\TMS.Common.pdb
+C:\Users\Saba Rafique\Documents\Visual Studio 2013\Projects\TMS\TMS\TMS.Common\obj\Debug\TMS.Common.dll
+C:\Users\Saba Rafique\Documents\Visual Studio 2013\Projects\TMS\TMS\TMS.Common\obj\Debug\TMS.Common.pdb
+C:\Users\Saba Rafique\Documents\Visual Studio 2013\Projects\TMS\TMS\TMS.Common\obj\Debug\TMS.Common.csprojResolveAssemblyReference.cache
