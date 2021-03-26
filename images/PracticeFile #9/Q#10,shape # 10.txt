@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int N,M=1,number,number2;
+	cin >> N;
+	number=N;
+	number2 = number;
+	for (int i = 0; i < N; i = i + 1)
+	{
+
+		for (int j = 0; j < M; j = j + 1)
+		{
+			cout << number2;
+			number2 = number2 - 1;
+		}
+		cout << "\n";
+		M = M + 2;
+		number = number + 1;
+		number2 = number;
+	}
+	cout << "\n";
+	return 0;
+
+}

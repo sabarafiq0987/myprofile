@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+void mySwap(int*a, int*b);
+int main()
+{
+	int x = 4, y = 6;
+	cout << &x << "\n";
+	cout << &y << "\n";
+	int*xPtr = &x;
+	int*yPtr = &y;
+	mySwap(xPtr, yPtr);
+	cout << *xPtr << "\n" << *yPtr << "\n";
+	cout << xPtr <<"\n"<< yPtr << "\n";
+	return 0;
+
+}
+void mySwap(int*a, int*b)
+{
+	int temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+	cout << a << "\n";
+	cout << b << "\n";
+	cout << *a << " " << *b << "\n";
+}

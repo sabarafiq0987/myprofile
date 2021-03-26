@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int N, height, counter;
+	cin >> N;
+	counter = N + (N - 1);
+	for (height = 1; height <= N; counter = counter - 1, height = height + 1)
+	{
+		    int number = height;
+		for (int j = 0; j < height - 1; j = j + 1)
+	      {
+			 cout << "-";
+		  }
+		for (int i = height; i <= counter; i = i + 1)
+		{
+			cout << number;
+			number = number + 1;
+		}
+		cout << "\n";
+	}
+	cout << "\n";
+	return 0;
+}

@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int numberOfChocolates , Rupees, costPerChocolate,quoteint=1,rem,q;
+	cout << "Enter the total rupees you have\n";
+	cin >> Rupees;
+	cout << "Enter cost of a chocholate\n";
+	cin >> costPerChocolate;
+	numberOfChocolates = Rupees / costPerChocolate;
+	q = Rupees / costPerChocolate;
+	while (quoteint>0)
+	{
+		quoteint = q / 3;
+		rem = q % 3;
+		numberOfChocolates = numberOfChocolates + quoteint;
+		q = quoteint + rem;
+
+    }
+	cout << numberOfChocolates << "\n";
+	cout << "\n";
+	return 0;
+}

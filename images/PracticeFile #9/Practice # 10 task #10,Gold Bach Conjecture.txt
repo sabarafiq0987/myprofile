@@ -1,0 +1,61 @@
+#include<iostream>
+using namespace std;
+bool isPrime(int num);
+int get1IfConjectureTrueElseGetTheCounterExample();
+int main()
+{  
+	int result;
+	result = get1IfConjectureTrueElseGetTheCounterExample();
+	cout << result << "\n";
+
+}
+int get1IfConjectureTrueElseGetTheCounterExample()
+{
+	int num, EvenIntInTheGivenRange = 2, testNum, prime1, prime2 = 2, result; bool flag = true;
+	cout << "Enter the last limit of range of even number for which you want to test the Gold Bach Conjecture\n";
+	cin >> num;
+	if (((num % 2)!= 0)||num==2)
+	{
+        cout << "This Program has been  Designed to test the Gold Bach Conjecture which requires even numbers greater than 2"<<"\n";
+		cout<<"You have entered wrong number.Enter the even number greater than 2\n";
+		cin >> num;
+	}
+	while (EvenIntInTheGivenRange < num)
+	{
+		EvenIntInTheGivenRange = EvenIntInTheGivenRange + 2;
+		testNum = EvenIntInTheGivenRange;
+		result = testNum;
+		while (prime2 < testNum)
+		{
+			prime1 = testNum - prime2;
+			if ((isPrime(prime1) == true) && (isPrime(prime2) == true))
+			{
+				flag = false;
+				break;
+			}
+			prime2 = prime2 + 1;
+		}
+		if (flag == false)
+		{
+			result =1;
+		}
+		else if (flag == true)
+		{
+			break;
+		}
+	}
+	return result;
+}
+bool isPrime(int num)
+{
+	int d = 2; bool flag = true;
+	while (d < num)
+	{
+		if (num%d==0)
+		{
+			flag = false;
+		}
+		d = d + 1;
+	}
+	return flag;
+}

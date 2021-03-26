@@ -1,0 +1,68 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	unsigned long long int number,counter1=0,counter2=0,digit,rem,lenght=0,number2,number1,rem1,rem2;
+	cin >> number;
+	number2 = number;
+	number1 = number;
+	while (number2 != 0)
+	{
+		number2 = number2 / 10;
+		lenght = lenght + 1;
+	}
+	number2 = number1;
+	for (int i = 1; i <=lenght; i = i + 1)
+	{
+		int j = 0;
+		rem1 = number2 % 10;
+		number2 = number2 / 10;
+		while (j<lenght)
+		{
+			rem = number % 10;
+			number = number / 10;
+			if (rem1 == rem)
+			{
+				counter1 = counter1 + 1;
+			}
+			j = j + 1;
+		}
+		number = number1;
+		if (counter1>=counter2)
+		{
+			digit = rem1;
+			counter2 = counter1;
+		}
+		counter1 = 0;
+	}
+	rem1 = 0;
+	number2 = number1;
+	for (int i = 0; i <= lenght; i = i + 1)
+	{ 
+		int j = 0;
+		rem1 = number2 % 10;
+		number2 = number2 / 10;
+		while (j < lenght)
+		{
+			rem = number % 10;
+			number = number / 10;
+			if (rem1 == rem)
+			{
+				counter1 = counter1 + 1;
+			}
+			j = j + 1;
+		}
+		number = number1;
+		if (counter1 == counter2)
+		{
+			if (rem1>digit)
+			{
+				digit = rem1;
+			}
+		}
+		counter1 = 0;
+	}
+	cout << "The most frequently occurring digit is:" << " " << digit << "\n";
+	cout << "\n";
+	return 0;
+}

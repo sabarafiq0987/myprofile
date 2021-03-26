@@ -1,0 +1,49 @@
+#include<iostream>
+using namespace std;
+void gcdWhenNum1IsGreater(int, int);
+void gcdWhenNum2IsGreater(int, int);
+
+int main()
+{
+	int n1, n2;
+	cout << "Enter the numbers to find gcd:\n";
+	cin >> n1 >> n2;
+	if (n1 > n2)
+	{
+		gcdWhenNum1IsGreater(n1, n2);
+	}
+	else if(n1<n2)
+	{
+	 
+		gcdWhenNum2IsGreater(n1, n2);
+	}
+	
+	cout << "\n";
+	return 0;
+}
+void gcdWhenNum1IsGreater(int num1, int num2)
+{
+	int t, s;
+	t = num2;
+	while (t != 0)
+	{
+		s = num1%t;
+		num1 = t;
+		t = s;
+	}
+	cout << "The greatest common divisor is :" << num1 << "\n";
+
+}
+void gcdWhenNum2IsGreater(int num1, int num2)
+{
+	int t, s;
+	t = num1;
+	while (t != 0)
+	{
+		s = num2%t;
+		num2 = t;
+		t = s;
+	}
+	cout << "The greatest common divisor is :" << num2 << "\n";
+
+}
