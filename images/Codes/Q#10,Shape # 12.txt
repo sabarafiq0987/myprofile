@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	unsigned long long int N, rem, resultant = 0, exp = 1,number=1,count,c=0,number2;
+	 cin >> N;
+	 count = N;
+	 number2 = number;
+	for (int i = 0; i < N; i = i + 1)
+	{
+		for (int j = 0; j<1; j = j + 1)
+		{
+			for (int k = 0; k < count; k = k + 1)
+			{
+				cout << "0";
+			}
+			if (count != N)
+			{
+				cout << resultant;
+			}
+		}
+		cout << "\n";
+		resultant = 0;
+		while (number >= 1)
+		{
+			rem = number % 2;
+			number = number / 2;
+			resultant = resultant + rem*exp;
+			exp = exp * 10;
+			c = c + 1;
+		}
+		exp = 1;
+		number = number2+ 1;
+		number2 = number;
+		count =N-c;
+		c = 0;
+		rem = 0;
+	}
+	cout << "\n";
+	return 0;
+}

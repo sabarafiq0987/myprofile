@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int N, height, counter=1,h=1,counter2;
+	cin >> N;
+	counter2 = N / 2 + N % 2;
+  for (height = 1; height <= N;height = height + 1)
+	 {
+		if ((height) <=counter2)
+		{
+			while (counter <= height)
+			{
+				cout << "*";
+			  counter = counter + 1;
+			}
+			counter = 1;
+			for (int i = 0; i < counter2-height; i = i + 1)
+			{
+				cout << "+";
+			}
+		}
+		else if((height)>counter2)
+		{
+			while (counter <= h)
+			{
+				cout << "+";
+				counter = counter + 1;
+			}
+			counter = 1;
+			for (int i = 0; i < (counter2-h); i = i + 1)
+			{
+				cout << "*";
+			}
+			h = h + 1;
+		}
+		cout << "\n";
+	}
+	cout << "\n";
+	return 0;
+}

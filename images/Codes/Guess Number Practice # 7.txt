@@ -1,0 +1,43 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	int lower, higher, n, guessNum;
+	cout << "Enter your ranges:\n";
+	cin >> lower >> higher;
+	cin.ignore();
+	n = 1;
+	char ch='y';
+
+	while (n < higher)
+	{
+		guessNum = (lower + higher) / 2;
+		cout << "Do your number is " << " " << guessNum << "\n";
+		cin.get(ch);
+		cin.ignore();
+		if (ch == 'y')
+		{  
+			n = higher + 1;
+		}
+		else if (ch != 'y')
+		{
+			cout << "Do your number is greater than " << " " << guessNum << "\n";
+			cin.get(ch);
+			cin.ignore();
+			if (ch == 'y')
+			{
+				lower = guessNum + 1;
+			}
+			else if (ch != 'y')
+			{
+				higher = guessNum - 1;
+			}
+		}
+		
+			n = n + 1;
+		}
+		
+         cout << "\n";
+	     return 0;
+}

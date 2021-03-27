@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int N, height;
+	cin >> N;
+	height = N;
+	char ch = 'A';
+	for (int i = 0; i < N; i = i + 1)
+	{
+		for (int j = 0; j < height; j = j + 1)
+		{
+			cout << ch << " ";
+			if (ch + 1 == 'Z')
+			{
+				ch = 'A';
+			}
+			else
+			{
+				ch= ch + 2;
+			}
+		}
+		height = height - 1;
+		cout << "\n";
+		ch = 'A';
+	}
+	cout << "\n";
+	return 0;
+}

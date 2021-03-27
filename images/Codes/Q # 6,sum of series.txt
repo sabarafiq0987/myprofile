@@ -1,0 +1,30 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+	signed long long int N, a=0, b=1, p,number,sum1=0,sum;
+	cout << "Enter the value of N\n";
+	cin >> N;
+	number = a + b;
+	p = a + b;
+	for (int i = 1; i <=N - 1; i = i + 1)
+	{
+		if ((i % 2) != 0)
+		{
+			sum1 = sum1 - pow(number, p);
+		}
+		else
+		{
+			sum1 = sum1 + pow(number, p);
+		}
+		p = a + b;
+		a = b;
+		b = p;
+		number = a + b;
+    }
+	sum = 1 + sum1;
+	cout << "Sum of the series is :" << " " << sum << "\n";
+	cout << "\n";
+	return 0;
+}

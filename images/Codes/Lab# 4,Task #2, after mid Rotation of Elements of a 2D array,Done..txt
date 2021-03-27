@@ -1,0 +1,85 @@
+#include<iostream>
+using namespace std;
+void doSwap(int*p1, int*p2);
+void displayMatrix(int[][9], int r, int c);
+void rotateTheElementsClockwise(int[][9], int r, int c);
+int main()
+{
+	int arr[9][9] = { { 1,2,3,4,5,6,7,8,65 },{9,10,11,12,13,14,15,16,66},{17,18,19,20,21,22,23,24,67 },{25,26,27,26,29,30,31,32,68},{33,34,35,36,37,38,39,40,69},{41,42,43,44,45,46,47,48,70},{49,50,51,52,53,54,55,56,71},{57,58,59,60,61,62,63,64,72},{73,74,75,76,77,78,79,80,81} }, r, c;
+	cin >> r;
+	cin >> c;
+	cout << "\n......Original Matrix......\n";
+	displayMatrix(arr, r, c);
+	rotateTheElementsClockwise(arr, r, c);
+	cout << "\n......Rotated Matrix......\n";
+	displayMatrix(arr, r, c);
+}
+void rotateTheElementsClockwise(int arr[][9], int r, int c)
+{
+	int i = 1, j = 0, k = 0, l = 0, column = c, counter = 0, totalIterations = r / 2;
+	while (counter < totalIterations)
+	{
+		if ((k == i - 1))
+		{
+			for (k = i - 1; k<column; k = k + 1)
+			{
+				doSwap(&arr[i][j], &arr[l][k]);
+			}
+			k = k - 1;
+			l = i;
+		}
+		if ((k == column - 1))
+		{
+			for (l = i; l<column; l = l + 1)
+			{
+				doSwap(&arr[i][j], &arr[l][k]);
+			}
+			l = l - 1;
+		}
+		if ((l == column - 1))
+		{
+			for (k = k - 1; k > counter; k = k - 1)
+			{
+				doSwap(&arr[i][j], &arr[l][k]);
+			}
+		}
+		if (l>i)
+		{
+			while (l>i)
+			{
+				doSwap(&arr[i][j], &arr[l][k]);
+				l = l - 1;
+			}
+		}
+		i = i + 1;
+		j = j + 1;
+		k = k + 1;
+		column = column - 1;
+		counter = counter + 1;
+	}
+
+}
+void doSwap(int*p1, int*p2)
+{
+	int temp = *p1;
+	*p1 = *p2;
+	*p2 = temp;
+}
+void displayMatrix(int arr[][9], int r, int c)
+{
+	for (int i = 0; i < r; i = i + 1)
+	{
+		for (int j = 0; j < c; j = j + 1)
+		{
+			cout << arr[i][j];
+			if (arr[i][j] < 10)
+				cout << "      ";
+			else if (arr[i][j] >= 10 && arr[i][j] < 100)
+				cout << "     ";
+			else
+				cout << "    ";
+		}
+		cout << "\n";
+	}
+}
+
